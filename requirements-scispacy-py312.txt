@@ -1,0 +1,22 @@
+# Pinned environment for running mmlite with the scispaCy tagger (en_core_sci_sm).
+#
+# en_core_sci_sm agrees with Java MetaMapLite better than the default en_core_web_sm (F1 0.977 vs
+# 0.969 on the parity corpus) and finds more drug names in medication lists; see the User Guide,
+# "Choosing the POS tagger".  Its newest published model (0.5.4) needs spaCy 3.7, which has no
+# Python 3.13 wheels, so this environment is Python 3.12.  Only the model is needed, not the
+# `scispacy` package (which would pull in numpy<2, scikit-learn and nmslib).
+#
+#   uv venv --python 3.12 .venv312
+#   uv pip install --python .venv312 -r requirements-scispacy-py312.txt
+#   set MMLITE_POSTAG_MODEL=en_core_sci_sm        (PowerShell: $env:MMLITE_POSTAG_MODEL = ...)
+#
+# Verified 2026-09-19 in a fresh Python 3.12.13 venv: the model loads, `annotate --postag-model
+# en_core_sci_sm` finds metformin in an unpunctuated medication line, and `/health` reports the
+# model.  The full test suite also passes there once the default model is added as well (the tests
+# exercise en_core_web_sm, which this file deliberately leaves out):
+#   uv pip install --python .venv312 "en_core_web_sm @ https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-3.7.1/en_core_web_sm-3.7.1-py3-none-any.whl"
+# Install mmlite itself from this checkout (the line below) or replace it with a release.
+
+-e .[server]
+spacy==3.7.5
+en_core_sci_sm @ https://s3-us-west-2.amazonaws.com/ai2-s2-scispacy/releases/v0.5.4/en_core_sci_sm-0.5.4.tar.gz

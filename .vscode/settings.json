@@ -1,0 +1,42 @@
+{
+  // Workspace-scoped on purpose: the user-level settings.json selects black and an 88-column
+  // ruler, which is right for other projects but contradicts this one. Here the formatter,
+  // lint rules and the 100-character line length all come from pyproject.toml, and CI enforces
+  // exactly that (`ruff check` + `ruff format --check`). Keep the editor and CI in agreement.
+  "[python]": {
+    "editor.defaultFormatter": "charliermarsh.ruff",
+    "editor.formatOnSave": true,
+    "editor.codeActionsOnSave": {
+      // `I` (isort) is in the ruff select list in pyproject.toml, so let the editor apply it.
+      "source.organizeImports.ruff": "explicit"
+    }
+  },
+
+  // Use the ruff pinned in .venv rather than the one bundled with the extension, so a format
+  // in the editor and a `ruff format --check` in CI can never disagree on version.
+  "ruff.importStrategy": "fromEnvironment",
+
+  // pyproject.toml sets line-length = 100.
+  "editor.rulers": [100],
+
+  // No python.defaultInterpreterPath on purpose: the extension already discovers .venv in the
+  // workspace root, and hardcoding Scripts/python.exe would be wrong on the Linux runners CI
+  // also builds on.
+  "python.testing.pytestEnabled": true,
+  "python.testing.unittestEnabled": false,
+  "python.testing.pytestArgs": ["tests"],
+
+  // The 2.2 GB index, the filtered RRF extracts and the build output are not source; keeping
+  // them out of the file watcher and search keeps the editor responsive in this repo.
+  "files.watcherExclude": {
+    "**/.venv/**": true,
+    "**/ivf/**": true,
+    "**/dist/**": true
+  },
+  "search.exclude": {
+    "**/.venv": true,
+    "**/ivf": true,
+    "**/dist": true,
+    "**/examples/*.RRF": true
+  }
+}

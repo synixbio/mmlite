@@ -1,0 +1,103 @@
+name: Release
+
+# Publishing uses PyPI Trusted Publishing (OIDC), so no API token is stored anywhere: PyPI
+# verifies that this specific workflow, in this specific repository, produced the upload.
+#
+# Two routes, deliberately different:
+#   * Run this workflow by hand (Actions -> Release -> Run workflow) -> TestPyPI. A rehearsal.
+#   * Push a v* tag                                                 -> PyPI. The real thing.
+#
+# The tag route is the irreversible one: a version number, once uploaded to PyPI, can never be
+# reused even if the release is deleted. Hence the version guard in `build` -- pushing v0.2.0
+# while pyproject still says 0.1.0 would otherwise publish 0.1.0 under the wrong tag, and that
+# mistake is not correctable afterwards.
+
+on:
+  push:
+    tags:
+      - "v*"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+
+      - name: Build sdist and wheel
+        run: |
+          python -m pip install --upgrade build twine
+          python -m build
+
+      - name: Check metadata
+        run: python -m twine check dist/*
+
+      - name: Tag must match the packaged version
+        if: startsWith(github.ref, 'refs/tags/v')
+        run: |
+          version=$(python -c "import re,pathlib; \
+            print(re.search(r'__version__ = \"([^\"]+)\"', \
+            pathlib.Path('src/mmlite/__init__.py').read_text()).group(1))")
+          tag="${GITHUB_REF_NAME#v}"
+          echo "packaged version: $version   tag: $tag"
+          if [ "$version" != "$tag" ]; then
+            echo "::error::tag $GITHUB_REF_NAME does not match version $version in src/mmlite/__init__.py"
+            exit 1
+          fi
+
+      - name: Install the wheel in a clean environment and run it
+        # Catches a broken entry point or a file missing from the wheel while that is still
+        # fixable -- after upload it is not.
+        run: |
+          python -m venv /tmp/smoke
+          /tmp/smoke/bin/python -m pip install --quiet dist/*.whl
+          /tmp/smoke/bin/python -c "import mmlite; print(mmlite.__version__)"
+          /tmp/smoke/bin/mmlite --help > /dev/null
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: dist
+          path: dist/
+
+  testpypi:
+    # Manual runs rehearse on TestPyPI; they never touch the real index.
+    if: github.event_name == 'workflow_dispatch'
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: testpypi
+      url: https://test.pypi.org/p/mmlite
+    permissions:
+      id-token: write # required for Trusted Publishing; nothing else needs it
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          name: dist
+          path: dist/
+      - uses: pypa/gh-action-pypi-publish@release/v1
+        with:
+          repository-url: https://test.pypi.org/legacy/
+          # TestPyPI accumulates rehearsals; re-running one version should not fail the job.
+          skip-existing: true
+
+  pypi:
+    if: startsWith(github.ref, 'refs/tags/v')
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: pypi
+      url: https://pypi.org/p/mmlite
+    permissions:
+      id-token: write
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          name: dist
+          path: dist/
+      - uses: pypa/gh-action-pypi-publish@release/v1

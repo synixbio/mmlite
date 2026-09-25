@@ -1,0 +1,72 @@
+.venv/
+__pycache__/
+*.pyc
+*.egg-info/
+dist/
+build/
+ivf/
+# Java MetaMapLite output: contains UMLS-derived strings, do not commit
+tests/parity/fixtures/
+*.RRF
+.pytest_cache/
+.ruff_cache/
+# examples/: the scripts, their README and their tests are source and ship. Everything they
+# *produce* is UMLS-derived and does not -- annotation exports, the loaded databases and the
+# filtered MRCONSO/MRREL extracts. Listed by extension rather than by name so a new export
+# format is excluded by default: only .py, .md and the synthetic .txt notes are tracked.
+examples/*.csv
+examples/*.jsonl
+examples/*.parquet
+examples/*.db
+examples/*.sqlite
+examples/*.json
+
+# Kept local, not published -- absent from GitHub and (hatchling honours this file) from the
+# sdist: the corpus exporters, their comparator and run-directory helper, and the UMLS
+# code-mapping scripts. Their tests live in tests/examples/local/ for the same reason, and run
+# wherever the scripts exist.
+examples/parse_to_csv.py
+examples/parse_to_jsonl.py
+examples/parse_to_jsonl_batch.py
+examples/parse_to_parquet.py
+examples/parse_to_sqlite.py
+examples/compare_exports.py
+examples/_runs.py
+examples/add_icd10cm_codes.py
+examples/add_icd10cm_hierarchy.py
+examples/add_loinc_codes.py
+examples/add_rxnorm_codes.py
+examples/add_rxnorm_ingredients.py
+examples/add_snomedct_hierarchy.py
+examples/add_snomed_codes.py
+examples/create_combined_codes_view.py
+tests/examples/local/
+
+# UMLS-derived working data: the filtered MRCONSO/MRREL extracts filter_mrconso.py and
+# filter_mrrel.py write. Licensed material, and large -- it is yours to keep, not ours to
+# redistribute.
+data/
+
+# annotation run output (the local examples/parse_to_*.py exporters): verbatim note text and
+# UMLS-derived strings, one directory per run. Never commit it.
+out/
+# corpora of notes to annotate: real ones are PHI, and even synthetic ones are not source
+free_texts/
+
+# local agent/tool state (a shared .claude/settings.json can still be committed)
+# and per-user editor/notes vaults
+.obsidian/
+.claude/*.lock
+
+# local credentials
+.env
+.env.*
+
+# internal working document, not distributed
+docs/DEVELOPMENT_PLAN.md
+
+# internal working documents, not distributed
+docs/OPERATIONS_MANUAL.md
+docs/USER_GUIDE.md
+docs/Negation detection.md
+docs/Deploying to another machine.md

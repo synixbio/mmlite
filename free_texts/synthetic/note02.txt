@@ -1,0 +1,160 @@
+# ================================================================================
+CLINICAL OUTPATIENT ENCOUNTER NOTE
+# ================================================================================
+
+PATIENT DEMOGRAPHICS & VISIT METRICS:
+Patient Name:       Miller, Robert E.
+MRN:                7104928
+DOB:                11/03/1966 (Age: 59)
+Sex:                Male
+Date of Service:    09/18/2026
+Encounter Type:     Outpatient Primary Care / Comprehensive Chronic Follow-up
+Attending Provider: Dr. Sarah Vance, MD
+Facility:           Valley Health Family Medicine Clinic
+
+# ================================================================================
+SUBJECTIVE
+# ================================================================================
+
+CHIEF COMPLAINT:
+"Quarterly diabetes follow-up and refills, plus my heartburn has been acting up at night."
+
+HISTORY OF PRESENT ILLNESS (HPI):
+Robert Miller is a 59-year-old male with a 6-year history of Type 2 Diabetes Mellitus 
+(non-insulin dependent) and moderate Gastroesophageal Reflux Disease (GERD) 
+presenting for scheduled quarterly management.
+
+1. Type 2 Diabetes Mellitus:
+   * Self-Monitored Blood Glucose (SMBG): Fasting glucose readings over the past 
+     90 days range between 110 and 145 mg/dL; postprandial levels generally remain 
+     under 170 mg/dL.
+   * Adherence: Reports complete compliance with Metformin 1000 mg twice daily 
+     and Empagliflozin 10 mg daily. Denies GI intolerance to metformin.
+   * Symptoms: Denies polyuria, polydipsia, polyphagia, blurry vision, or episodes 
+     of hypoglycemia (no shakiness, diaphoresis, or palpitations).
+   * Microvascular screening: Denies lower extremity paresthesias, numbness, 
+     burning pain, or non-healing foot sores. Last dilated eye exam performed 
+     4 months ago with no reported retinopathy.
+
+2. Gastroesophageal Reflux Disease (GERD):
+   * Reports increased nocturnal acid reflux and retrosternal burning 3-4 nights 
+     per week over the past month.
+   * Associated with late-evening meals and recent dietary indiscretion.
+   * Denies dysphagia, odynophagia, unintentional weight loss, hematemesis, or melena.
+   * Currently taking OTC Famotidine 20 mg PRN with incomplete symptom relief.
+
+CURRENT MEDICATIONS:
+1. Metformin HCl Extended-Release 1000 mg PO; take 1 tablet BID with meals.
+2. Empagliflozin (Jardiance) 10 mg PO; take 1 tablet once daily in the morning.
+3. Atorvastatin 20 mg PO; take 1 tablet once daily at bedtime.
+4. Famotidine 20 mg PO; take 1 tablet PRN heartburn (frequency: ~4 times weekly).
+
+ALLERGIES:
+* No Known Drug Allergies (NKDA).
+
+PAST MEDICAL HISTORY (PMH):
+* Type 2 Diabetes Mellitus without acute complications (ICD-10: E11.9)
+* Hyperlipidemia, primary (ICD-10: E78.00)
+* GERD without esophagitis (ICD-10: K21.9)
+
+PAST SURGICAL HISTORY (PSH):
+* Right inguinal hernia repair (open), 2018.
+
+SOCIAL HISTORY:
+* Tobacco: Former smoker (15 pack-year history; quit 10 years ago).
+* Alcohol: 1 beer on weekends; denies heavy or binge drinking.
+* Diet: Reports difficulty limiting refined carbohydrates during work lunches.
+* Exercise: Walks 20-30 minutes twice a week.
+
+REVIEW OF SYSTEMS (ROS):
+* General: No fever, chills, night sweats, or fatigue.
+* HEENT: No visual changes, nasal congestion, or sore throat.
+* Cardiovascular: No chest pressure, palpitations, or orthopnea.
+* Respiratory: No cough, dyspnea, or wheezing.
+* Gastrointestinal: Positive for retrosternal pyrosis as noted in HPI; denies nausea, vomiting, abdominal tenderness, or hematochezia.
+* Genitourinary: Denies dysuria, hematuria, or daytime frequency.
+* Extremities: No edema.
+* Neurologic: Intact sensation bilaterally; no focal deficits or gait instability.
+
+# ================================================================================
+OBJECTIVE
+# ================================================================================
+
+VITAL SIGNS:
+* Blood Pressure:       124/78 mmHg (Left arm, regular adult cuff, seated)
+* Heart Rate:           68 bpm (regular rhythm)
+* Respiratory Rate:     14 breaths/min
+* Temperature:          98.2 °F (36.8 °C, oral)
+* SpO2:                 98% on ambient air
+* Height:               5 ft 10 in (177.8 cm)
+* Weight:               198.0 lbs (89.8 kg)
+* BMI:                  28.4 kg/m²
+
+PHYSICAL EXAMINATION:
+* General: Well-developed, overweight male in no acute distress. Alert, cooperative.
+* Head/Neck: Normocephalic, atraumatic. Mucous membranes moist. No thyromegaly or JVD.
+* Cardiovascular: Normal rate, regular rhythm. S1 and S2 normal. No murmurs, gallops, or rubs.
+* Pulmonary: Clear to auscultation bilaterally. Breath sounds vesicular throughout.
+* Abdomen: Soft, non-distended. Mild epigastric tenderness to deep palpation without guarding or rebound. Normoactive bowel sounds. No masses or organomegaly.
+* Extremities: Warm, well-perfused. No pretibial or pedal edema. Posterior tibial and dorsalis pedis pulses 2+ bilaterally.
+* Diabetic Foot Exam:
+  * Inspection: Skin intact bilaterally. No erythema, calluses, maceration, ulcerations, or nail dystrophies.
+  * Neurologic: Normal sensation to 10g Semmes-Weinstein monofilament testing across 10 plantar sites bilaterally.
+  * Vibration: Intact bilaterally at the hallux.
+
+POINT-OF-CARE & RECENT LAB RESULTS:
+* POC Hemoglobin A1c (In-clinic today): 7.1% (Previous: 7.4% 6 months prior)
+* POC Urine Microalbumin/Creatinine Ratio: 18 mcg/mg (Normal: <30 mcg/mg)
+* Fasting BMP (09/10/2026):
+  * Sodium: 139 mEq/L
+  * Potassium: 4.1 mEq/L
+  * BUN: 16 mg/dL
+  * Creatinine: 0.92 mg/dL
+  * eGFR: >90 mL/min/1.73m²
+* Fasting Lipid Panel (09/10/2026):
+  * Total Cholesterol: 162 mg/dL
+  * Triglycerides: 148 mg/dL
+  * HDL: 46 mg/dL
+  * LDL: 86 mg/dL
+
+# ================================================================================
+ASSESSMENT & PLAN
+# ================================================================================
+
+1. Type 2 Diabetes Mellitus without Complications (E11.9)
+   * Status: Glycemic control improving (A1c down from 7.4% to 7.1%, approaching patient goal of <7.0%). Renal function stable, no microalbuminuria, diabetic foot exam normal.
+   * Plan:
+     - Continue Metformin ER 1000 mg PO BID.
+     - Continue Empagliflozin 10 mg PO daily.
+     - Continue daily self-foot inspections.
+     - Nutrition referral ordered for medical nutrition therapy to address carbohydrate counting during workdays.
+
+2. Gastroesophageal Reflux Disease (GERD) without Esophagitis (K21.9)
+   * Status: Uncontrolled on intermittent H2-receptor antagonist; symptoms aggravated by late meal timing.
+   * Plan:
+     - Discontinue PRN famotidine.
+     - Start Omeprazole 20 mg PO once daily, 30-60 minutes before breakfast for an 8-week trial course.
+     - Lifestyle modifications reviewed: avoid recumbency within 3 hours of meals, elevate head of bed 6 inches, and limit trigger foods (caffeine, high-fat evening meals).
+     - Instructed to return or contact clinic if dysphagia, food impaction, or involuntary weight loss develops.
+
+3. Primary Hyperlipidemia (E78.00)
+   * Status: Well-controlled on moderate-intensity statin therapy (LDL 86 mg/dL).
+   * Plan:
+     - Continue Atorvastatin 20 mg PO daily at bedtime.
+     - Repeat lipid panel in 12 months.
+
+4. Health Maintenance & Prevention:
+   * Administered Pneumococcal conjugate vaccine (PCV20, Lot #NV104, Right Deltoid) as indicated for adults with diabetes.
+   * Annual dilated retinal exam up to date.
+
+FOLLOW-UP:
+* Return to clinic in 3 months for repeat A1c and clinical re-evaluation of reflux symptoms.
+* Red flags discussed: seek immediate medical attention for chest pain radiating to arm/jaw, acute shortness of breath, dark tarry stools, or persistent vomiting.
+
+Total visit duration: 30 minutes.
+
+Provider Signature:
+Sarah Vance, MD
+Internal Medicine / Primary Care
+NPI: 1498230192
+Date: 09/18/2026

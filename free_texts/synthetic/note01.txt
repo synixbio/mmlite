@@ -1,0 +1,177 @@
+================================================================================
+                    CLINICAL OUTPATIENT ENCOUNTER NOTE
+================================================================================
+
+PATIENT INFORMATION
+--------------------------------------------------------------------------------
+Patient Name:       Doe, Jane
+MRN:                9482104
+DOB:                04/12/1978 (Age: 48)
+Date of Service:    09/18/2026
+Encounter Type:     Outpatient Internal Medicine / Routine Follow-up
+Attending Provider: Dr. Alex Mercer, MD, FACP
+Clinic Location:    Metro Health Center, Suite 400
+
+================================================================================
+SUBJECTIVE
+================================================================================
+CHIEF COMPLAINT:
+"Here for a regular blood pressure check and to talk about some knee stiffness."
+
+HISTORY OF PRESENT ILLNESS (HPI):
+Jane Doe is a 48-year-old female with an established medical history of 
+essential hypertension and mild bilateral knee osteoarthritis who presents 
+for a routine 6-month chronic care follow-up.
+
+1. Essential Hypertension:
+   - Patient reports strict compliance with daily Lisinopril (10 mg PO once daily).
+   - Home blood pressure logs indicate consistent control, averaging 125-135 
+     mmHg systolic and 75-85 mmHg diastolic, without isolated systolic or 
+     diastolic spikes exceeding 140/90 mmHg.
+   - Denies headache, lightheadedness, syncope, visual changes, chest pain, 
+     shortness of breath, orthopnea, or lower extremity edema.
+
+2. Musculoskeletal (Knees):
+   - Reports gradual, mild bilateral knee stiffness, predominantly when rising 
+     from a seated position after prolonged desk work and when ascending stairs.
+   - Stiffness improves after 10-15 minutes of light ambulation.
+   - Denies focal swelling, joint locking, instability, or acute trauma.
+   - Symptoms managed intermittently with OTC acetaminophen with satisfactory 
+     relief.
+
+CURRENT MEDICATIONS:
+1. Lisinopril 10 mg oral tablet; take 1 tablet daily by mouth.
+2. Acetaminophen 500 mg oral tablet; take 1-2 tablets PRN joint discomfort 
+   (reported usage: 1-2 times per week).
+3. Multivitamin adult oral tablet; 1 tablet daily.
+
+ALLERGIES:
+- Penicillin (Reaction: mild cutaneous maculopapular rash; no airway compromise 
+  or anaphylaxis).
+
+PAST MEDICAL HISTORY:
+- Essential Hypertension (ICD-10: I10), diagnosed 2021
+- Primary Osteoarthritis, bilateral knees (ICD-10: M17.0), diagnosed 2023
+
+PAST SURGICAL HISTORY:
+- Appendectomy (laparoscopic), 2012; uncomplicated.
+
+SOCIAL HISTORY:
+- Tobacco: Lifetime non-smoker.
+- Alcohol: Rare/moderate (1-2 glasses of wine on weekends; approx. 2 standard 
+  drinks/week).
+- Illicit Drugs: None.
+- Exercise: 30 minutes of brisk walking 3-4 days per week.
+- Occupation: Administrative coordinator (sedentary work).
+
+FAMILY HISTORY:
+- Father: Deceased at 74 (Myocardial infarction).
+- Mother: Alive at 71 (Type 2 diabetes mellitus, hypertension).
+- Siblings: One younger brother, healthy.
+
+REVIEW OF SYSTEMS (ROS):
+- Constitutional: No fatigue, unintended weight changes, fever, or chills.
+- Eyes: No vision blurriness or eye pain.
+- Cardiovascular: No palpitations, chest pressure, or orthopnea.
+- Respiratory: No dyspnea, wheezing, or chronic cough.
+- Gastrointestinal: No nausea, vomiting, abdominal pain, or changes in bowel habits.
+- Musculoskeletal: Positive for mild knee stiffness as per HPI; negative for 
+  generalized arthralgias or myalgias.
+- Neurological: No focal weakness, paresthesias, or dizziness.
+- Psychiatric: Normal mood; denies sleep disturbances or elevated anxiety.
+
+================================================================================
+OBJECTIVE
+================================================================================
+VITAL SIGNS:
+- Blood Pressure:       128/82 mmHg (Right arm, regular adult cuff, seated)
+- Pulse Rate:           72 bpm (regular rate and rhythm)
+- Respiratory Rate:     16 breaths/min (unlabored)
+- Body Temperature:     98.4 deg F (36.9 deg C, oral)
+- SpO2:                 99% on room air
+- Height:               5 ft 6 in (167.6 cm)
+- Weight:               164 lbs (74.4 kg)
+- BMI:                  26.4 kg/m^2
+
+PHYSICAL EXAMINATION:
+- General: Well-appearing, well-nourished female, awake, alert, oriented x4. 
+  In no acute distress.
+- Eyes: Sclerae anicteric; conjunctivae pink; PERRL.
+- Head/Neck: Normocephalic, atraumatic. Supple neck, no jugular venous 
+  distension (JVD), no carotid bruits.
+- Cardiovascular: Regular rate and rhythm. Distinct S1 and S2 present. No 
+  audible murmurs, gallops, or friction rubs. Distal pulses (radial and DP) 
+  intact and 2+ bilaterally.
+- Pulmonary: Lungs clear to auscultation bilaterally (CTAB). Good air exchange. 
+  No crackles, wheezing, or rhonchi.
+- Abdomen: Soft, non-tender, non-distended. Bowel sounds normoactive across all 
+  4 quadrants. No hepatomegaly, splenomegaly, or palpable masses.
+- Musculoskeletal: Normal gait and station. Bilateral knees demonstrate full 
+  active and passive range of motion (0-135 degrees). Mild bilateral 
+  patellofemoral crepitus noted with movement. No joint line tenderness, 
+  warmth, erythema, or joint effusion bilaterally. Anterior/posterior drawer 
+  and varus/valgus stress maneuvers stable.
+- Extremities: Warm and well-perfused. Trace/no edema in lower extremities.
+- Neurologic: Grossly non-focal. Cranial nerves II-XII intact. Sensation intact 
+  to light touch throughout lower extremities.
+
+LABORATORY & DIAGNOSTIC REVIEW:
+Basic Metabolic Panel (BMP) - Fasting (Drawn 09/15/2026):
+- Sodium:               140 mEq/L       (Ref: 135-145 mEq/L)
+- Potassium:            4.3 mEq/L       (Ref: 3.5-5.0 mEq/L)
+- Chloride:             102 mEq/L       (Ref: 98-107 mEq/L)
+- CO2:                  24 mEq/L        (Ref: 22-29 mEq/L)
+- Blood Urea Nitrogen:  14 mg/dL        (Ref: 7-20 mg/dL)
+- Serum Creatinine:     0.85 mg/dL      (Ref: 0.50-1.10 mg/dL)
+- eGFR:                 >90 mL/min/1.73m^2
+- Fasting Glucose:      94 mg/dL        (Ref: 70-99 mg/dL)
+Impression: Normal renal function and electrolyte balance on ACE-inhibitor therapy.
+
+================================================================================
+ASSESSMENT & PLAN
+================================================================================
+SUMMARY:
+48-year-old female presenting for routine follow-up with well-controlled primary 
+hypertension on lisinopril and stable, mild bilateral knee osteoarthritis.
+
+1. Essential Hypertension (ICD-10: I10):
+   - Current Status: Controlled. Office BP 128/82 mmHg; recent home averages 
+     concordant. Serum creatinine and potassium levels are unremarkable.
+   - Plan:
+     * Continue Lisinopril 10 mg PO once daily.
+     * Refilled 90-day supply with 3 refills sent electronically to preferred 
+       pharmacy.
+     * Continue periodic home BP logs (recommend 2-3 measurements weekly).
+     * Re-emphasized dietary salt reduction (DASH diet) and routine physical 
+       activity.
+
+2. Primary Bilateral Knee Osteoarthritis (ICD-10: M17.0):
+   - Current Status: Stable, mild symptoms without acute joint instability or 
+     effusion.
+   - Plan:
+     * Continue conservative symptom management. Continue acetaminophen 500 mg 
+       PRN (instructed not to exceed 2000-3000 mg within 24 hours).
+     * Recommended incorporation of low-impact quadriceps-strengthening exercises 
+       (e.g., stationary cycling, water aerobics) to support joint mechanics.
+     * Patient was advised to contact clinic for formal physical therapy 
+       referral if functional impairment or pain increases.
+
+3. Preventive Medicine & Health Maintenance:
+   - Annual influenza vaccine offered and administered in clinic today (Lot #FL8842, 
+     Deltoid Left, Exp: 05/2027).
+   - Fasting lipid panel and mammogram due for scheduling at upcoming annual exam.
+
+DISPOSITION & FOLLOW-UP:
+- Follow-up in clinic in 6 months for scheduled hypertension check and repeat 
+  routine metabolic labs.
+- Return sooner or seek urgent medical evaluation if severe headache, chest 
+  discomfort, acute dyspnea, or sudden joint swelling/inability to bear weight occurs.
+
+Time spent in encounter: 25 minutes (greater than 50% devoted to chronic disease 
+management and counseling).
+
+Electronically Signed:
+Alex Mercer, MD, FACP
+License #: MD-882310
+Date/Time: 09/18/2026 08:15 MDT
+================================================================================

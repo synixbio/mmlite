@@ -1,0 +1,130 @@
+[project]
+name = "mmlite"
+dynamic = ["version"]  # single-sourced from src/mmlite/__init__.py
+description = "Python port of NLM MetaMapLite: near-real-time UMLS concept recognition"
+readme = "README.md"
+requires-python = ">=3.11"
+# NLM's own BSD-style MetaMapLite terms, not a stock SPDX licence, hence the LicenseRef.
+license = "LicenseRef-MetaMapLite-BSD"
+license-files = ["LICENSE", "NOTICE-MetaMapLite.md"]
+keywords = ["umls", "metamap", "metamaplite", "nlp", "biomedical", "ner", "concept-recognition"]
+classifiers = [
+    # Beta, not Production/Stable: the parity story is strong, but the package has had no
+    # external users yet. Move to "5 - Production/Stable" with 1.0.0, not before.
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Healthcare Industry",
+    "Intended Audience :: Science/Research",
+    # The index, normalization and the POS models are English-scoped.
+    "Natural Language :: English",
+    "Operating System :: OS Independent",  # pure Python, no compiled extensions
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Scientific/Engineering :: Bio-Informatics",
+    "Topic :: Scientific/Engineering :: Information Analysis",
+    "Topic :: Scientific/Engineering :: Medical Science Apps.",
+    "Topic :: Text Processing :: Indexing",
+    "Topic :: Text Processing :: Linguistic",
+    "Typing :: Typed",
+]
+dependencies = [
+    "typer>=0.12",
+]
+
+[project.optional-dependencies]
+nlp = ["spacy>=3.7"]                              # POS tagging and spaCy sentence detection
+server = ["fastapi>=0.110", "uvicorn>=0.29"]      # the REST API
+dev = ["pytest>=8", "ruff>=0.5", "httpx>=0.27", "build>=1.2", "mypy>=1.10"]
+all = ["mmlite[nlp,server]"]
+
+[project.scripts]
+mmlite = "mmlite.cli:app"
+
+[project.urls]
+# This project's own docs ship in the sdist; the NLM links below are the *upstream* Java tool.
+"MetaMapLite (upstream)" = "https://lhncbc.nlm.nih.gov/LHC-research/LHC-projects/NLP/MetaMapLite.html"
+"MetaMapLite source (upstream)" = "https://github.com/lhncbc/metamaplite"
+"UMLS licensing" = "https://uts.nlm.nih.gov/uts/"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.version]
+path = "src/mmlite/__init__.py"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/mmlite"]
+
+[tool.hatch.build.targets.sdist]
+include = [
+    "src/",
+    "tests/",
+    "scripts/",
+    "docs/",
+    # tests/examples/ exercises these by path, so shipping the tests without the scripts would
+    # ship tests that cannot run.
+    "examples/",
+    "README.md",
+    "CHANGELOG.md",
+    "LICENSE",
+    "NOTICE-MetaMapLite.md",
+    "requirements-scispacy-py312.txt",
+]
+# Licensed UMLS-derived data and build output never belong in a distribution. The examples/
+# patterns mirror .gitignore: the scripts are source, everything they produce is derived from
+# the UMLS and is the user's own to keep, not ours to redistribute.
+exclude = [
+    "tests/parity/fixtures/",
+    "ivf/",
+    "out/",
+    "examples/*.csv",
+    "examples/*.jsonl",
+    "examples/*.parquet",
+    "examples/*.db",
+    "examples/*.sqlite",
+    "examples/*.json",
+    "examples/*.RRF",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+# Deprecations raised inside third-party code (starlette's TestClient on httpx, anyio's portal
+# alias), not by this project; silenced so that a warning in *our* code stands out.
+filterwarnings = [
+    "ignore:Using `httpx` with `starlette.testclient` is deprecated",
+    "ignore:The anyio.abc.BlockingPortal alias is deprecated:DeprecationWarning",
+]
+
+[tool.mypy]
+# The package ships py.typed, so its annotations are a promise to users: check them strictly.
+# Run with the [all] extras installed so spaCy's and FastAPI's own types are seen.
+files = ["src/mmlite"]
+strict = true
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+
+[tool.ruff.lint]
+# Explicit, so `line-length` above is actually enforced (E501 is not in ruff's default select).
+select = ["E", "W", "F", "I", "UP", "B", "C4", "SIM", "RUF"]
+ignore = [
+    "B008",    # typer.Option() in a parameter default is the Typer idiom
+    "RUF001",  # Greek letters and other "ambiguous" characters are this project's subject matter
+    "RUF002",
+    "RUF003",
+    "RUF005",  # `a + [b]` reads better than unpacking for the short lists here
+]
+
+[tool.ruff.lint.per-file-ignores]
+# E501 is waived only where a wrapped line would stop being usable: generated tables, verbatim
+# RRF rows, and the verbatim rows in the test fixtures.
+"src/mmlite/pipeline/negex_triggers.py" = ["E501"]
+"tests/conftest.py" = ["E501"]
+# Verbatim RRF rows in the example-script fixtures: wrapping one stops it being a valid row.
+"tests/examples/local/test_add_icd10cm_codes.py" = ["E501"]
+"tests/examples/local/test_add_rxnorm_ingredients.py" = ["E501"]
+"tests/unit/test_server.py" = ["E402"]  # imports follow pytest.importorskip
+"tests/parity/test_parity.py" = ["E402"]
+"scripts/compare_nlp_with_java.py" = ["E402"]  # imports follow a sys.path insert
